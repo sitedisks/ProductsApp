@@ -29,6 +29,8 @@
               // Add a list item for the product.
               $('<li>', { text: formatItem(item) }).appendTo($('#products'));
             });
+          }).fail(function (jqXHR, textStatus, err) {
+              $('#products').html('Error: ' + err);
           });
     });
 
